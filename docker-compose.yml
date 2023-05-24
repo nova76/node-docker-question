@@ -1,0 +1,14 @@
+version: '2.2'
+
+services:
+    node-service:
+        container_name: node20
+        build:
+            context: ./node-service
+        restart: always
+        ports:
+            - "4200:4200"
+        volumes:
+            - ./node-service:/app
+        #command: sh -c "while :; do sleep 10; done"
+        #command: node index.js
